@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+    <script defer src="script.js"></script>
+    <link rel="icon" href="./apple-removebg-preview.png" sizes="192x192" type="image/png">
+    <link rel="stylesheet" href="footerstyles.css">
+    <style>
+
+        /* General body and container styles (keep these or adjust as needed) */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+           
+            margin: 0;
+            display: flex;
+            min-height: 100%;
+            flex-direction:column;
+            }
+        main{
+            flex:1;
+        }
+
+        .faq-container.styled-faq {
+            max-width: 800px;
+            margin: auto;
+            background: rgb(213, 221, 219);
+            padding: 2rem;
+            border-radius: 8px; /* Slightly less rounded */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+        }
+
+        .faq-container.styled-faq h1 {
+            text-align: left; /* Align heading to the left */
+            font-size: 2.2rem; /* Slightly larger heading */
+            margin-bottom: 1.5rem; /* Less bottom margin */
+            color: #333;
+        }
+
+        .faq-container.styled-faq h2 {
+            margin-top: 2.5rem; /* More top margin for section headings */
+            color: #555; /* Slightly lighter heading */
+            border-bottom: 1px solid #000000; /* Subtle separator */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* New styles for the FAQ items */
+        .faq-item {
+            margin-bottom: 1rem;
+            background-color: #f9f9f9; /* Light gray background for each item */
+            border-radius: 6px;
+            overflow: hidden; /* To contain the toggle icon */
+            border: 1px solid #eee; /* Light border */
+        }
+
+        .faq-question-wrapper {
+            display: flex;
+            justify-content: space-between; /* Space out question and icon */
+            align-items: center;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        .faq-question {
+            width: calc(100% - 30px); /* Leave space for the icon */
+            text-align: left;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold; /* Make the question bolder */
+            color: #333;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .toggle-icon {
+            font-size: 1.2rem;
+            color: #777;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
+        .faq-question-wrapper.active .toggle-icon::before {
+            content: '\00D7'; /* Unicode for the multiplication sign (X) */
+            font-size: 1.4rem;
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            background-color: #fff; /* White background for the answer */
+            color: #555;
+            display:block;
+            display: none; /* Initially hidden */
+            border-top: 1px solid #eee; /* Subtle separator */
+        }
+
+        .faq-answer a {
+            color: #dde4ea;
+            text-decoration: none;
+            white-space: normal;
+            
+        }
+        .faq-answer { display: none;
+            margin-bottom: 1em;
+            white-space: normal;
+         }
+
+.faq-question-wrapper.active + .faq-answer { 
+    display: block; }
+
+    </style>
+</head>
+<body>
+    <header class="header header-scroll">
+        <div class="nav-links">
+             <!-- Left Links -->
+            <ul class="left-links">
+                <li><a href="contact_us.html" class="link">Contact Us</a></li>
+                <li><a href="locations.html" class="link">Locations</a></li>
+            </ul>
+             <div class="logo">
+                <li><a href="index.html"><img src="./pictures/apple-removebg-preview.png" alt="Logo"></a></li>
+            </div>
+                <ul class="right-links">
+                    <li><a href="resources.html" class="link">Resources</a></li>
+                </ul>
+            </div>
+        </div>
+</div>
+    </header>
+
+        <main class="faq-container styled-faq">
+            <h1>Frequently Asked Questions</h1>
+        
+            <h2>General</h2>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">1. What is SustainaBite?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: SustainaBite is an innovative platform that connects users with local food banks to help reduce food waste and support those in need. It provides an easy way to donate food and find nearby donation centers.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">2. How does SustainaBite work?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: Simply enter your postal code and select your country, and SustainaBite will show you a list of nearby food donation banks. You can then donate food to help support your local community.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">3. Is SustainaBite free to use?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: Yes, SustainaBite is completely free to use for both food donors and recipients.
+                        <p> We are dedicated to making food donations as easy and accessible as possible.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">4. Can I donate any type of food?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: While many food banks accept a wide variety of non-perishable and fresh foods, each food bank may have its own guidelines on what they accept. We recommend checking the specific food bank's website or contacting them directly for more details.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">5. What if I can’t find a food bank near me?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: If you can’t find a food bank in your area, we recommend reaching out to local charities, churches, or community centers that may be able to direct you to a nearby food bank or other donation opportunities.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">6. How can I get involved in SustainaBite besides donating food?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: SustainaBite also offers opportunities for volunteering and spreading awareness. Check our community section to find out more ways you can contribute.</p>
+                </div>
+            </div>
+        
+            <h2>Technical Questions</h2>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">7. What browsers are supported by the website?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: SustainaBite is designed to work on modern browsers such as Google Chrome, Mozilla Firefox, Safari, and Microsoft Edge. We recommend keeping your browser up to date for the best experience.</p>
+                </div>
+            </div>
+        
+            <h2>Privacy & Security</h2>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">8. Is my personal information safe on SustainaBite?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: Yes, we take your privacy and security seriously. We use encryption and follow best practices to protect your data. For more information, please check our Privacy Policy.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">9. Do I need to create an account to use SustainaBite?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: No, you don’t need to create an account to search for food banks and make donations. However, signing up for an account may offer additional benefits, like saving your favorite food banks or receiving notifications about new donation opportunities.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">10. Does SustainaBite share my personal data with third parties?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: We do not share your personal data with third parties without your consent. Please review our Privacy Policy for detailed information on how we handle your data.</p>
+                </div>
+            </div>
+        
+            <h2>App & Features</h2>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">11. Is there a SustainaBite mobile app?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: Currently, we do not offer a mobile app, but our website is fully responsive and works seamlessly on mobile devices. You can use SustainaBite on your smartphone or tablet to find nearby food banks.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item">
+                <div class="faq-question-wrapper">
+                    <button class="faq-question">12. How do I download the SustainaBite app?</button>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Answer: The SustainaBite app is coming soon. Stay tuned for announcements regarding its release.</p>
+                </div>
+            </div>
+        
+        </main>
+    
+
+   
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h1 class="footer-title">SustainaBite</h1>
+                <p class="footer-description">Saving food one meal at a time.</p>
+            </div>
+        
+            <div class="footer-links">
+                <div class="footer-links-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="./FAQ.html">FAQ</a></li>
+                        <li><a href="./attributions.html">Attributions</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-links-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="./aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-links-column">
+                    <h3>Social</h3>
+                    <ul class="social-links">
+                        <li><a href="#" target="_blank"><img src="pictures/facebook.png" alt="Facebook"></a></li>
+                        <li><a href="#" target="_blank"><img src="pictures/x.png" alt="Twitter"></a></li>
+                        <li><a href="#" target="_blank"><img src="pictures/instagram.png" alt="Instagram"></a></li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="footer-legal">
+                <p>&copy; 2025 SustainaBite. All rights reserved.</p>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all FAQ items
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question-wrapper');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.toggle-icon');
+                
+                question.addEventListener('click', function() {
+                    // Close all other open FAQs
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.display = 'none';
+                            otherItem.querySelector('.toggle-icon').textContent = '+';
+                        }
+                    });
+                    
+                    // Toggle current FAQ
+                    item.classList.toggle('active');
+                    
+                    // Update display and icon
+                    if (item.classList.contains('active')) {
+                        answer.style.display = 'block';
+                        icon.textContent = '−';
+                    } else {
+                        answer.style.display = 'none';
+                        icon.textContent = '+';
+                    }
+                });
+            });
+        });
+        
+        // Keep all your other existing JavaScript code here
+        // (header scroll, parallax, footer, chat functionality, etc.)
+        </script>
+</body>
+</html>

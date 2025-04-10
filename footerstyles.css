@@ -1,0 +1,135 @@
+/* Footer Styles */
+.footer-section {
+    position: relative; /* This should be fine */
+    background-color: rgb(141, 149, 126);
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;  /* Ensures it stays at the bottom of the page */
+    margin:0;
+}
+
+
+.footer-title {
+    position: relative;
+    text-align: center; /* Center the heading text */
+    font-size: 13vw; /* Very large font size relative to the viewport width */
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.8);
+    width: 100%; /* Ensure it can take full width for centering */
+    display: flex; /* Use flexbox to help with centering */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center content */
+    min-height: 100px; /* Optional: control the minimum height of the footer */
+}
+
+.footer-description {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Arrange the footer content vertically */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    text-align: center; /* Center text inside the content */
+    width: 100%; /* Ensure the content takes full width of its container */
+}
+
+
+.footer-brand {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.footer-links-column {
+    flex-basis: calc(33% - 20px);
+    min-width: 200px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.footer-links-column h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.footer-links-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links-column ul li a:hover {
+    color: lightseagreen;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.footer-legal {
+    text-align: center;
+    font-size: 0.9em;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%; /* Ensure it takes full width for centering */
+}
+
+.footer-legal ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-legal ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal ul li a:hover {
+    color: lightseagreen;
+}
+
+/* Responsive adjustments remain the same */

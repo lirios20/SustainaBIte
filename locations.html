@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find the Nearest Food Donation Bank</title>
+  <link rel="stylesheet" href="./stylesheet.css"> <!-- Fixed stylesheet link -->
+  <link rel="stylesheet" href="footerstyles.css">
+
+  <style>
+    html {
+      background-color: rgb(248, 248, 248);
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    html, body{
+      height:100;
+      margin:0;
+      padding:0; 
+      display: flex;
+      flex-direction:column;
+    
+    }
+
+    .header {
+      background-color: seagreen;
+      padding: 1rem;
+      color: rgb(130, 186, 133);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .nav-links ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .link {
+      color: rgb(138, 177, 139);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .link:hover {
+      color: lightseagreen;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    main {
+      padding-top: 100px; /* Prevent content from being hidden behind the navbar */
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      margin-top: 1rem;
+      border: none;
+      border-radius: 12px;
+    }
+
+    main{
+      margin-top: 20px;
+      margin-bottom: 200px;
+    }
+    .hedding2{
+      margin-top: 100px;
+      margin-bottom: 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header header-scroll">
+    <div class="nav-links">
+      <!-- Left Links -->
+      <ul class="left-links">
+        <li><a href="contact_us.html" class="link">Contact Us</a></li>
+        <li><a href="locations.html" class="link">Locations</a></li>
+      </ul>
+
+      <!-- Logo -->
+      <div class="logo">
+        <img src="./pictures/apple-removebg-preview.png" alt="Logo">
+      </div>
+
+      <!-- Right Links -->
+      <ul class="right-links">
+        <li><a href="#" class="link">Link3</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="hedding2">
+    <h2>Find the Nearest Food Donation Bank</h2>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <input type="text" id="postalCode" placeholder="Enter ZIP / Postal Code" required>
+
+      <select id="country">
+        <option value="">Select Country</option>
+        <option value="US">United States</option>
+        <!-- Add more countries here -->
+      </select>
+
+      <button onclick="findFoodBank()">Search</button>
+
+      <iframe id="map" src="" style="display:none;"></iframe>
+    </div>
+  </main>
+
+  <script>
+
+    function findFoodBank() {
+      const postalCode = document.getElementById("postalCode").value.trim();
+      const countryCode = document.getElementById("country").value;
+
+      if (!postalCode || !countryCode) {
+        alert("Please enter a ZIP / Postal Code and select a country.");
+        return;
+      }
+
+      let query = `food donation bank near ${postalCode}`;
+      query += `, ${getCountryName(countryCode)}`;
+
+      const mapSrc = `https://www.google.com/maps/embed/v1/search?q=${encodeURIComponent(query)}&key=AIzaSyAnb0K4lHXc4SatsUOSNxBmhTfmuU31bJ0`;
+
+      const iframe = document.getElementById("map");
+      iframe.src = mapSrc;
+      iframe.style.display = "block";
+    }
+
+    function getCountryName(countryCode) {
+      const countryNames = {
+        "US": "United States",
+        "CA": "Canada",
+        // Add others as needed
+      };
+      return countryNames[countryCode] || countryCode;
+
+    }
+  </script>
+ <!-- Footer Section -->
+ <footer class="footer-section">
+  <div class="footer-content">
+      <div class="footer-brand">
+          <h1 class="footer-title">SustainaBite</h1>
+          <p class="footer-description">Saving food one meal at a time.</p>
+      </div>
+  
+      <div class="footer-links">
+          <div class="footer-links-column">
+              <h3>Support</h3>
+              <ul>
+                  <li><a href="./FAQ.html">FAQ</a></li>
+                  <li><a href="./attributions.html">Attributions</a></li>
+              </ul>
+          </div>
+  
+          <div class="footer-links-column">
+              <h3>Company</h3>
+              <ul>
+                  <li><a href="./aboutus.html">About Us</a></li>
+              </ul>
+          </div>
+  
+          <div class="footer-links-column">
+              <h3>Social</h3>
+              <ul class="social-links">
+                  <li><a href="#" target="_blank"><img src="pictures/facebook.png" alt="Facebook"></a></li>
+                  <li><a href="#" target="_blank"><img src="pictures/x.png" alt="Twitter"></a></li>
+                  <li><a href="#" target="_blank"><img src="pictures/instagram.png" alt="Instagram"></a></li>
+              </ul>
+          </div>
+      </div>
+  
+      <div class="footer-legal">
+          <p>&copy; 2025 SustainaBite. All rights reserved.</p>
+          <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+          </ul>
+      </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+    <script defer src="script.js"></script>
+    <link rel="icon" href="./apple-removebg-preview.png" sizes="192x192" type="image/png">
+    <link rel="stylesheet" href="footerstyles.css">
+    <style>
+        /* General Reset */
+
+        html, body{
+            height:100%;
+            margin:0;
+            padding: 0;
+            overflow-x: hidden;
+            
+        
+        
+        }
+
+/* Body & Text */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header nav ul {
+    list-style-type: none;
+}
+
+.header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header nav ul li a.active {
+    border-bottom: 2px solid #fff;
+}
+
+/* About Us Section */
+.about-us {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.about-us h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.team {
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 30%;
+    background-color: #e2e2e2;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 16px;
+}
+
+.company-history {
+    margin-top: 50px;
+}
+
+.company-history h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.company-history p {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header header-scroll">
+        <div class="nav-links">
+          <!-- Left Links -->
+          <ul class="left-links">
+            <li><a href="contact_us.html" class="link">Contact Us</a></li>
+            <li><a href="locations.html" class="link">Food Bank Locations</a></li>
+          </ul>
+    
+          <!-- Logo -->
+          <div class="logo">
+            <img src="./pictures/apple-removebg-preview.png" alt="Logo">
+          </div>
+    
+          <!-- Right Links -->
+          <ul class="right-links">
+            <li><a href="./resources.html" class="link">Resources</a></li>
+          </ul>
+      </header>
+      <section class="about-us">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to SustainaBite, where we bridge the gap between surplus food and those in need. 
+                Our mission is to combat food waste and insecurity by connecting the hospitality industry 
+                with local food banks and composting programs. Through innovative technology and sustainable 
+                partnerships, we aim to create solutions that benefit people, the planet, and business prosperity - 
+                proving that environmental responsibility and economic success can go hand in hand.</p>
+                
+            <div class="company-history">
+                <h2>Our Philosophy</h2>
+                <p>At SustainaBite, we believe that food is too valuable to waste and that sustainability 
+                    should be accessible, practical, and beneficial for both businesses and individuals. 
+                    Our philosophy is rooted in the idea that small, intentional actions-when multiplied-can 
+                    create a massive impact on global food waste reduction and environmental preservation.</p>
+                <p>We embrace innovation, collaboration, and responsibility, using technology to empower 
+                    businesses with smart waste management solutions and guiding consumers toward more 
+                    sustainable food choices. By fostering a culture of mindful consumption, resource efficiency,
+                     and social good, we strive to build a future where food waste is minimized, communities are 
+                     nourished, and the planet thrives.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h1 class="footer-title">SustainaBite</h1>
+                <p class="footer-description">Saving food one meal at a time.</p>
+            </div>
+        
+            <div class="footer-links">
+                <div class="footer-links-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="./FAQ.html">FAQ</a></li>
+                        <li><a href="./attributions.html">Attributions</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-links-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="./aboutus.html">About Us</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-links-column">
+                    <h3>Social</h3>
+                    <ul class="social-links">
+                        <li><a href="#" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a></li>
+                        <li><a href="#" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a></li>
+                        <li><a href="#" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a></li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="footer-legal">
+                <p>&copy; 2025 SustainaBite. All rights reserved.</p>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Smooth scroll functionality
+        document.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    
+</body>
+</html>

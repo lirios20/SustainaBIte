@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+    <script defer src="./script.js"></script>
+    <link rel="icon" href="./apple-removebg-preview.png" sizes="192x192" type="image/png">
+    <style>
+       /* General Styles */
+       /* General Styles */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 90%;
+    max-width: 960px;
+    background-color: #f0f0f0;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-container {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+/* Left Section */
+.contact-left {
+    flex: 0 0 250px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.menu-button::before {
+    content: '≡';
+    font-size: 1.5em;
+    color: #333;
+}
+
+.enquiry-options {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.enquiry-options button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.enquiry-options button:hover,
+.enquiry-options button.active {
+    background-color: #d0d0d0;
+    font-weight: bold;
+}
+
+.contact-details {
+    font-size: 0.85em;
+    color: #555;
+    line-height: 1.8;
+}
+
+.contact-details strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Right Section (Form) */
+.contact-right {
+    flex: 1;
+    padding-left: 30px;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    letter-spacing: -1px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.email-phone-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.cta-text {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.recaptcha-wrapper {
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    width: 90%;
+    max-width: 960px;
+    padding: 20px 0;
+    color: #777;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: #777;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon-button {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon-button:hover {
+    background-color: #d0d0d0;
+}
+
+.social-icon-button svg {
+    width: 16px;
+    height: 16px;
+    fill: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-left {
+        padding-right: 0;
+        margin-bottom: 30px;
+        align-items: stretch;
+    }
+
+    .menu-button {
+        align-self: flex-start;
+    }
+
+    .contact-right {
+        padding-left: 0;
+    }
+
+    .form-grid, .email-phone-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer-links {
+        order: 1;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header class="header header-scroll">
+        <p class="logo"><img src="./pictures/apple-removebg-preview.png" style="height: 65px;" alt="Picture of an icon"></p>
+        <ul class="links">
+            <li class="items"></li>
+                <a href="./index.html" class="link">Home</a>
+            <li class="items"></li>
+                <a href="./locations.html" class="link">Locations</a>
+            <li class="items"></li>
+                <a href="#" class="link"></a>
+        </ul>
+        
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="contact-left">
+                <h1>Get in Touch</h1>
+                <p>We'd love to hear from you! Use the form below or our contact details.</p>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:your-email@example.com">sustainabite@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contact-right">
+                <h2>Send Us a Message</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+</main>
+<!-- Footer Section -->
+
+</head>
+<body>
+
+</html>

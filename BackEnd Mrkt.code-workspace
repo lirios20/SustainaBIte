@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../BackEnd Mrkt"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Marketing Website"
+	}
+}

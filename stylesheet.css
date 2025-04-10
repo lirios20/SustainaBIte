@@ -1,0 +1,403 @@
+@font-face {
+    font-family: Georgia;
+    src: url('./fonts/georgia-2/georgia.ttf')}
+ @font-face {
+    font-family: MainFont;
+    src: url('./fonts/the-seasons/seasons.otf')}
+
+    html {
+      background-color: rgb(248, 248, 248);
+  }
+  
+  html,
+  body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  }
+  
+  body {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      min-height: 100vh; /* Ensure body takes at least the full viewport height */
+  }
+  
+  /* ... other CSS ... */
+  /* General Navbar Style */
+  .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      z-index: 1000; /* Ensure header is on top */
+      transition: all 0.3s ease;
+      background-color: transparent;
+      opacity: 0;
+      pointer-events: none;
+      height: 55px;
+  }
+  
+  /* Solid navbar and visible content when scrolled */
+  .header.header-scroll {
+      background-color: rgb(248, 248, 248);
+      opacity: 1;
+      pointer-events: auto;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      size: 50%;
+  }
+  
+  /* Logo Styling */
+  .logo {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%
+  }
+  
+  .logo img {
+      height: 60px;
+      width: auto;
+  }
+  
+  /* Left and Right Links Container */
+  .nav-links {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: relative;
+      left: 0;
+      right: 0;
+      padding: 0 20px;
+  }
+  
+  /* Links Styling */
+  a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      padding: 10px 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .link {
+      font-size: 1rem;
+      font-weight: bold;
+      color: rgb(53, 64, 36);
+  }
+  
+  /* Left Links - Align them to the left */
+  .left-links {
+      display: flex;
+      gap: 50px;
+      justify-content: flex-start;
+      margin-right: auto;
+  }
+  
+  /* Right Links - Align them to the right */
+  .right-links {
+      margin-left: auto;
+      display: flex;
+      gap: 20px;
+      padding-right: 15px;
+  }
+  
+  /* Remove default list style */
+  ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+  
+  
+  .assistant-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: seagreen;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 1000; /* Ensure it's on top */
+      transition: background-color 0.3s;
+  }
+  
+  .assistant-button:hover {
+      background-color: mediumseagreen;
+  }
+  
+  .chat-popup {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 300px;
+      height: 400px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000; /* Ensure it's on top */
+  }
+  
+  .chat-popup.show {
+      display: flex;
+  }
+  
+  .chat-header {
+      background-color: seagreen;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+  }
+  
+  .close-chat {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+  }
+  
+  .chat-body {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+      color: #333;
+  }
+  
+  .chat-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+  }
+  
+  .chat-input input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+      outline: none;
+  }
+  
+  .chat-input button {
+      background-color: seagreen;
+      color: white;
+      border: none;
+      padding: 0 16px;
+      cursor: pointer;
+  }
+  
+  .content {
+      min-height: 100vh;
+      padding: 100px;
+  }
+  
+  .video1 {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      z-index: 1; /* Ensure video is above parallax by default */
+  }
+  
+  .video-banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+  }
+  
+  h1 {
+      font-family: MainFont;
+      text-align: center;
+      margin-top: 150px;
+      z-index: 1; /* Ensure text is above parallax */
+      position: relative; /* Needed for z-index to work */
+  }
+  
+  h2 {
+      text-align: center;
+      font-family: MainFont;
+      margin-top: 60px;
+      font-size: 1.7rem;
+      z-index: 1; /* Ensure text is above parallax */
+      position: relative; /* Needed for z-index to work */
+  }
+  
+  p {
+      text-align: center;
+      margin-left: 300px;
+      margin-right: 300px;
+      font-size: 1.2rem;
+      font-family: 'Open Sans', sans-serif;
+      z-index: 1; /* Ensure text is above parallax */
+      position: relative; /* Needed for z-index to work */
+  }
+  
+  #h_1 {
+      color: rgb(53, 64, 36);
+  }
+  
+  .square {
+    width: 100%;
+    height: 750px;
+    display: grid;
+    margin-top: 90px;
+    flex-direction: column;
+    text-align: center;
+    place-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(158, 169, 156);
+    /* position: fixed;  <-- REMOVE THIS LINE */
+    /* top: 50%;         <-- REMOVE THIS LINE */
+    /* right: 20px;       <-- REMOVE THIS LINE */
+    /* transform: translateY(-50%); <-- REMOVE THIS LINE */
+    z-index: 5; /* Keep the z-index to be above the parallax */
+  
+}
+  
+  .square h1,
+  .square h2 {
+      margin: 0;
+  }
+  
+  #h_1 {
+      margin: 0;
+      padding: 0;
+      font-size: 3rem;
+      font-weight: bold;
+  }
+  
+  #h_2 {
+      margin-top: 20px;
+      font-size: 2rem;
+  }
+
+  #phone {
+    /* Size Control */
+    width: auto;           /* Maintain aspect ratio */
+    height: 80vh;          /* 80% of viewport height */
+    max-height: 600px;     /* Maximum size */
+    
+    /* Positioning */
+    display: block;
+    margin: 30px auto;     /* Vertical spacing and centering */
+    
+    /* Visual Enhancements */
+    object-fit: contain;    /* Ensures whole image fits */
+    border-radius: 20px;    /* Optional rounded corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Optional shadow */
+}
+  
+.download{
+  overflow: visible;
+  visibility: visible;
+  height: auto;
+  background-color: white;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 10; /* Make sure it's above other sections */
+  padding: 40px 20px;
+  padding-bottom: 40px; /* Explicitly set bottom padding */
+  display: flex;
+  text-align:left;
+  align-items: center;
+  flex-direction:column;
+}
+
+.download h2{
+  font-size:2rem;
+  margin-bottom:10px;
+  align-self: center;
+}
+
+
+.download-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #333;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.getapp {
+  align-self: flex-end;
+  width: 100%;
+  max-width: 400px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-right: 35%;
+}
+.download-content {
+  display: flex;
+  align-items: center; /* Vertically align image and GoodBarber info */
+  justify-content: center; /* Center the content horizontally */
+  gap: 20px; /* Space between image and GoodBarber info */
+  margin-top: 20px; /* Add some space between text and content */
+  margin-bottom: 0; /* Ensure no bottom margin on this container */
+}
+
+.app-preview {
+  /* Styles for the image preview */
+  max-width: 300px; /* Maintain image width */
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.app-preview img { /* Target the image inside app-preview */
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.app-access-info {
+  text-align: center; /* Center text */
+  display: flex;
+  flex-direction: column; /* Stack text and logo */
+  align-items: center; /* Center text and logo horizontally */
+}
+
+.getourapptxt {
+  color: #555;
+  margin-bottom: 5px; /* Space between text and logo */
+}
+
+.goodbarber-link {
+  display: inline-block;
+}
+
+.goodbarber-link img {
+  width: 250px; /* Make logo smaller */
+  height: auto;
+  vertical-align: middle;
+}
